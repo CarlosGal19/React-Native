@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Meal from './Meal';
+import AnimatedMealCard from './Meal';
 
 export default function Main() {
 
@@ -23,19 +23,19 @@ export default function Main() {
 
     return (
         <View
-        style={{
-            flex: 1,
-            paddingTop: insets.top,
-            paddingBottom: insets.bottom,
-            paddingLeft: insets.left,
-            paddingRight: insets.right,
-            backgroundColor: 'white'
-        }}>
+            style={{
+                flex: 1,
+                paddingTop: insets.top,
+                paddingBottom: insets.bottom,
+                paddingLeft: insets.left,
+                paddingRight: insets.right,
+                backgroundColor: 'white'
+            }}>
             <FlatList
                 data={meals}
-                renderItem={({ item }) => <View>
-                                            <Meal meal={item} />
-                                          </View>}
+                renderItem={({ item, index }) => <View>
+                                                    <AnimatedMealCard meal={item} index={index} />
+                                                </View>}
                 keyExtractor={item => item.idMeal}
             />
         </View>
