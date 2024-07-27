@@ -20,8 +20,8 @@ export default function AnimatedMealCard({ meal, index }) {
     useEffect(() => {
         Animated.timing(opacity, {
             toValue: 1,
-            duration: 250,
-            delay: index * 250,
+            duration: 100,
+            delay: index * 100,
             useNativeDriver: true,
         }).start();
     }, [index, opacity]);

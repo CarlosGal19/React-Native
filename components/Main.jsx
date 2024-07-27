@@ -1,4 +1,4 @@
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -31,6 +31,7 @@ export default function Main() {
                 paddingRight: insets.right,
                 backgroundColor: 'white'
             }}>
+            <Text style={ styles.title }>Seafood Meals</Text>
             <FlatList
                 data={meals}
                 renderItem={({ item, index }) => <View>
@@ -41,3 +42,12 @@ export default function Main() {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    title: {
+        textAlign: 'center',
+        fontSize: 24,
+        fontWeight: 'bold',
+        margin: 10
+    },
+});
