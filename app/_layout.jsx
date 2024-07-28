@@ -18,7 +18,17 @@ export default function App() {
                         paddingLeft: insets.left,
                         paddingRight: insets.right
                     }}>
-                    < Stack />
+                    < Stack
+                        screenOptions={{
+                            headerStyle: {
+                                backgroundColor: 'lightblue',
+                            },
+                            headerTintColor: 'black',
+                            headerTitleStyle: {
+                                fontWeight: 'bold',
+                            },
+                        }}
+                    />
                 </View>
             </SafeAreaProvider >
         </>
