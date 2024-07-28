@@ -1,16 +1,21 @@
-import { StyleSheet, Text, View, Image, Animated } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, Pressable } from 'react-native';
+import { Link } from 'expo-router';
 import { useRef, useEffect } from 'react';
 
 function Meal({ meal }) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>{meal.strMeal}</Text>
-            <Image
-                style={styles.image}
-                source={{ uri: meal.strMealThumb }}
-                accessibilityLabel={`${meal.strMeal} thumbnail`}
-            />
-        </View>
+        <Link asChild href={`/${meal.idMeal}`}>
+            <Pressable style={styles.container}>
+                <View>
+                    <Text style={styles.text}>{meal.strMeal}</Text>
+                    <Image
+                        style={styles.image}
+                        source={{ uri: meal.strMealThumb }}
+                        accessibilityLabel={`${meal.strMeal} thumbnail`}
+                    />
+                </View>
+            </Pressable>
+        </ Link>
     );
 }
 
