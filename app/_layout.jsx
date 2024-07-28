@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -14,15 +14,11 @@ export default function App() {
                 <View
                     style={{
                         flex: 1,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        paddingTop: insets.top,
                         paddingBottom: insets.bottom,
                         paddingLeft: insets.left,
-                        paddingRight: insets.right,
-                        backgroundColor: 'white'
+                        paddingRight: insets.right
                     }}>
-                    < Slot />
+                    < Stack />
                 </View>
             </SafeAreaProvider >
         </>
